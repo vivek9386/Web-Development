@@ -1,0 +1,5 @@
+@mixin font-style($fontSize,$Lspacing) {
+    font-family: 'Ubuntu';
+    font-size: $fontSize;
+    letter-spacing: $Lspacing;
+}

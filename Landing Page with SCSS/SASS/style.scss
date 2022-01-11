@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@300&family=Vujahday+Script&display=swap");
+@import "mixins";
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu";
+  background-color: #f4f6f6;
+}
+
+.container {
+  #showcase {
+    min-height: 500px;
+    width: 100%;
+
+    .bg-image {
+      position: absolute;
+      width: 100%;
+      background: url(../Images/background.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 450px;
+      z-index: -1;
+      opacity: 0.9;
+    }
+
+    .head-design {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+      flex-direction: column;
+      line-height: 1.3;
+      color: $light-color;
+      width: 100%;
+      height: 450px;
+
+      h1 {
+        @include font-style(3rem, 3px);
+      }
+
+      h3 {
+        @include font-style(1.5rem, 3px);
+        padding: 1em 0;
+      }
+
+      #btn {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 1px solid $sun-glow;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        color: $light-color;
+        cursor: pointer;
+        transition: all 0.4s linear;
+
+        &:hover {
+          background-color: #138d75;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .navbar {
+      // position: sticky;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      background-color: #1c2833;
+      z-index: 11;
+
+      .logo {
+        display: inline-block;
+        width: 50%;
+        height: 50px;
+        font-size: 1.7rem;
+        vertical-align: middle;
+        line-height: 50px;
+        letter-spacing: 1px;
+        font-family: "Vujahday Script";
+        text-align: left;
+        font-weight: 600;
+
+        a {
+          text-decoration: none;
+          color: $light-color;
+        }
+      }
+
+      .list-content {
+        width: 50%;
+
+        .list {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          .item {
+            display: inline-block;
+            width: 20%;
+            line-height: 50px;
+            height: 50px;
+            list-style-type: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+
+            a {
+              text-decoration: none;
+              color: $light-color;
+              transition: all 0.3s ease-in;
+            }
+
+            &:hover {
+              background-color: $secondary-dark;
+
+              & > a {
+                color: #e6b0aa;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      width: 100%;
+      height: max-content;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 32.5rem;
+        background-color: $secondary-color;
+
+        .image-block {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          height: 300px;
+          border: 10px solid $light-grey;
+          border-radius: 50%;
+          overflow: hidden;
+
+          .image {
+            width: 280px;
+            height: 280px;
+          }
+        }
+      }
+
+      .right {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 32.5rem;
+        background-color: $lighted-blue;
+
+        .bio-content {
+          width: 70%;
+          height: 32.5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: 1.2;
+          letter-spacing: 1px;
+          flex-direction: column;
+
+          h1 {
+            font-size: 3rem;
+            font-family: "Bebas Neue";
+          }
+
+          p {
+            font-size: 1.4rem;
+            padding: 1em 0;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 0;
+      flex: auto;
+      background-color: #fadbd8;
+
+      .Web-dev,
+      .Android,
+      .pLang {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 60vh;
+
+        .skill-set {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .skill-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 8px solid black;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            margin: 2rem 1rem;
+            box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.5);
+            transition: all 0.3s ease-in;
+
+            &:hover{
+                transform: scale(1.1);
+                z-index: 10;
+                box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.3);
+            }
+
+            .skill-item {
+              width: 140px;
+              height: 140px;
+            }
+
+            h3 {
+              padding-top: 1em;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      padding: 0 16px;
+      background-color: $lighted-blue;
+
+      label {
+        color: black;
+        margin: 0.8rem 0.8rem;
+        font-weight: 700;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin: 2rem 0;
+        color: #9B59B6;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      textarea {
+        width: 97.5%;
+        padding: 15px 10px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+
+        &:focus {
+          background-color: aquamarine;
+        }
+      }
+
+      button {
+        padding: 0.6rem 1.2rem;
+        margin: 15px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+
+        &:hover{
+            background-color: $secondary-dark;
+            color: $light-color;
+        }
+      }
+    }
+  }
+    
+    footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 50vh;
+        background-color: rgb(61, 60, 60);
+
+        .social-list{
+            display: flex;
+            justify-content: center;
+
+            .list-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                list-style-type: none;
+                border-radius: 50%;
+                background-color: #45B39D;
+                margin: 0 16px;
+                width: 60px;
+                height: 60px;
+                color: $light-color;
+                cursor: pointer;
+                transition: all 0.3s ease-in;
+
+                &:hover{
+                    transform: scale(1.1);
+                    background-color: #D7BDE2;
+
+                    & > a{
+                        color: #34495E;
+                    }
+                }
+                a{
+                    color: $light-color;
+                    transition: all 0.3s ease-in;
+                }
+                
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .copyright{
+
+            p{
+                color: $light-color;
+
+                a{
+                    color: #E59866;
+                }
+            }
+        }
+    }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
